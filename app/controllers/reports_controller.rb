@@ -4,8 +4,4 @@ class ReportsController < ApplicationController
     
   end
 
-  def new
-    @report = Report.new
-    render :_form
-  end
 end

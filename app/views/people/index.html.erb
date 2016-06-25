@@ -10,7 +10,7 @@
 <div id="report-form">
   <%= form_for @person do |f| %>
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.file_field :name %>
     <%= f.submit "Submit Name" %>
   <% end%>
 </div>

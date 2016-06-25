@@ -5,6 +5,7 @@ class PeopleController < ApplicationController
   end
 
   def create
+    binding.pry
     @result = Person.find_by(submit_params)
     if @result
       render :success

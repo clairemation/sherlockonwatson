@@ -1,12 +1,13 @@
-<div id="photos-box">
-  <% @people.each do |person| %>
-    <div class="each_person">
-    <%= image_tag person.image_url, alt: person.name, class: "person_photo" %>
-    <p><%= person.name %></p>
-    </div>
-  <% end %>
-</div>
-<button id="report-button" type="button">REPORT</button>
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+  </head>
+<body>
+
+
 <form id="image" method="post" enctype="multipart/form-data">
 <!--   <input type="hidden" name="parameters" value = ""> -->
   <input type="file" id="imageFile" name="images_file" accept="image/*" capture = "camera">
@@ -32,7 +33,7 @@ form.on("submit", function(e){
   req.setRequestHeader("Accept-Language", 'en');
 
   var formData = new FormData(form[0]);
-  formData.append('parameters', JSON.stringify({'classifier_ids': ['hillary_or_trump_2135190280'], 'threshold': 0.6}));
+  formData.append('parameters', JSON.stringify({'classifier_ids': ['dogs_1029639469'], 'threshold': 0.2}));
 
   req.send(formData);
 
@@ -40,10 +41,9 @@ form.on("submit", function(e){
     console.log('success');
     var responseData = JSON.parse(this.response);
     console.log(responseData);
-    $.post('/people', responseData).done(function(response) {
-      $('#photos-box').html(response);
-      $('#report-button').hide();
-      $('form').hide();
+
+    $.post('/people', responseData).done(function() {
+      console.log('done');
     });
   };
 
@@ -93,3 +93,7 @@ form.on("submit", function(e){
 
 // }
 </script>
+
+
+</body>
+</html>

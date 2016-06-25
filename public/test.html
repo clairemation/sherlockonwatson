@@ -39,7 +39,12 @@ form.on("submit", function(e){
 
   req.onload = function(e){
     console.log('success');
-    console.log(JSON.parse(this.response));
+    var responseData = JSON.parse(this.response);
+    console.log(responseData);
+
+    $.post('/people', responseData).done(function() {
+      console.log('done');
+    });
   };
 
   req.onerror = function(e){

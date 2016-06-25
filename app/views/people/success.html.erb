@@ -1,1 +1,9 @@
-<h2>A match has been found in our database</h2>
+<h2 id="result-banner">A match has been found in our database</h2>
+<h4 id="result-name">
+  <%= @result.name %>
+</h4>
+<br>
+<%= image_tag @result.image_url, alt: @result.name, id:"result-image" %>
+<p id="contact">
+  Would you like to contact the FBI?
+</p>

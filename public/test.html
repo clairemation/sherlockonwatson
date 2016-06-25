@@ -38,8 +38,8 @@ form.on("submit", function(e){
   req.send(formData);
 
   req.onload = function(e){
-    console.log('err');
-    console.log(arguments)
+    console.log('success');
+    console.log(JSON.parse(this.response));
   };
 
   req.onerror = function(e){

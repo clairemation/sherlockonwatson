@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+  </head>
+<body>
+
+
+<form id="image" method="post" enctype="multipart/form-data">
+<!--   <input type="hidden" name="parameters" value = ""> -->
+  <input type="file" id="imageFile" name="images_file" accept="image/*" capture = "camera">
+  <input type="submit">
+</form>
+
+<div id="results">
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script>
+
+var path = "https://watson-api-explorer.mybluemix.net/visual-recognition/api/v3/classify?api_key=3318bf584c9adc67ab7f3ac662e0b72e390bc4e7&version=2016-05-19";
+
+var form = $('#image');
+
+form.on("submit", function(e){
+  e.preventDefault();
+
+  var req = new XMLHttpRequest();
+  req.open("POST", path);
+  req.setRequestHeader("Accept", 'application/json');
+  req.setRequestHeader("Accept-Language", 'en');
+
+  var formData = new FormData(form[0]);
+  formData.append('parameters', JSON.stringify({'classifier_ids': ['dogs_1029639469'], 'threshold': 0.2}));
+
+  req.send(formData);
+
+  req.onload = function(e){
+    console.log('err');
+    console.log(arguments)
+  };
+
+  req.onerror = function(e){
+    console.log('err');
+    console.log(arguments)
+  };
+  // $.ajax({
+  //   url: path,
+  //   type: 'POST',
+  //   headers: {'Accept-Language': 'en', 'Accept': 'application/json'},
+  //   data: new FormData(form[0]),
+  //   success: function(msg) {
+  //     console.log(msg.images[0]);
+  //   },
+  //   contentType: 'multipart/form-data',
+  //   processData: false,
+  // })
+});
+
+// function uploadStuff(e){
+//   var imgFile = document.getElementById("imageFile").files[0];
+//   console.log(imgFile);
+//   var form_data = new FormData();
+//   form_data.append("parameters", "parameters.json");
+//   form_data.append("images_file", 'file', imgFile.name);
+//   console.log(form_data);
+
+// $.ajax({
+//   url: path,
+//   type: "POST",
+//   // headers: { 'Content-Type': 'multipart/form-data' },
+//   data: "/Users/claire/Downloads/dogs.jpg",
+//   contentType: undefined,
+//   processData: false,
+//   success: function(data){
+//     console.log(data);
+//   },
+//   error: function(err){
+//     console.log(err);
+//   }
+// }
+// );
+
+// }
+
+
+// }
+</script>
+
+
+</body>
+</html>

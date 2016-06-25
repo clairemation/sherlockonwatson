@@ -12,3 +12,24 @@
 .person_photo {
   max-width: 100%;
 }
+#report-form {
+  display: none;
+}
+#report-button {
+  font-size: 60px;
+  width: 50%;
+  margin: 0 24% 0 24%;
+  color: #FFF;
+  background: #569E3D linear-gradient(#79D858, #569E3D) repeat-x;
+  border-color: #4A993E;
+}
+#report-form label {
+  font-size: 17px;
+}
+input {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 17px;
+  border: 1px solid #000000;
+}

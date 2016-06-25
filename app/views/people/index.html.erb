@@ -7,3 +7,11 @@
   <% end %>
 </div>
 <button id="report-button" type="button">REPORT</button>
+<div id="report-form">
+  <%= form_for @person do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.submit "Submit Name" %>
+  <% end%>
+</div>
+<%  %>

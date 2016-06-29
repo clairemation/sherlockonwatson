@@ -4,17 +4,7 @@ $(document).ready(function(){
   $("#report-button").click(function(e){
     e.preventDefault;
     $("#report-button").hide();
-    $("#report-form").show();
-  })
-  $("#report-form").on("submit", function(e){
-    e.preventDefault;
-    var target = e.target
-    $ajax({
-      method: $(target).attr("method"),
-      action: $(target).attr("action"),
-      dataType: "json",
-      data: {people: $(target).serialize()}
-    })
+    $("#image").show();
   })
 
   var path = "https://watson-api-explorer.mybluemix.net/visual-recognition/api/v3/classify?api_key=3318bf584c9adc67ab7f3ac662e0b72e390bc4e7&version=2016-05-19";

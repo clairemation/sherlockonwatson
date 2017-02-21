@@ -1,3 +1,5 @@
-We're aware of the exposed API key. It was for testing only within a closed development environment, and expired before we made this public.
+Send a photo from your camera to the IBM Watson image recognition API. For our tests, we trained Watson on images of political candidates.
 
---Claire
+(We're aware of the exposed API key. It was for testing only within a closed development environment, and expired before we made this public.
+
+--Claire)

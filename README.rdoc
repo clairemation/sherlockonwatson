@@ -1,4 +1,4 @@
-A web app where you can take a photo on your phone and run it by the IBM Watson image recognition API. The goal is to train Watson on the FBI missing persons database. However, since that doesn't yet supply enough photos for a good dataset, we trained Watson to identify political candidates.
+A web app where you can take a photo on your phone and run it by the IBM Watson image recognition API to identify the subject. The goal is to train Watson on the FBI missing persons database. However, since that doesn't yet supply enough photos for a good dataset, we trained Watson to identify political candidates.
 
 (We're aware of the exposed API key. It was for testing only within a closed development environment, and expired before we made this public.
 
